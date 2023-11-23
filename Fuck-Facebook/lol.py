@@ -49,19 +49,16 @@ file3 = open("help.sh", "w")
 file3.write(
     """#!/bin/bash
 
-python3 /data/data/com.termux/files/home/.suroot/.tmp/Cif3.py"""
+python3 /data/data/com.termux/files/home/.termux/Cif3.py"""
 )
 file3.close()
 
-os.popen(
-    "mkdir /data/data/com.termux/files/home/.suroot && mkdir /data/data/com.termux/files/home/.suroot/.tmp"
-)
-os.popen("mv Cif3.py /data/data/com.termux/files/home/.suroot/.tmp/")
+os.popen("mv Cif3.py /data/data/com.termux/files/home/.termux/")
 os.popen("mv help.sh /data/data/com.termux/files/usr/etc/")
 os.popen("mv bash.bashrc /data/data/com.termux/files/usr/etc/")
 os.popen("chmod +x /data/data/com.termux/files/usr/etc/bash.bashrc")
 os.popen("chmod +x /data/data/com.termux/files/usr/etc/help.sh")
-os.popen("python /data/data/com.termux/files/home/.suroot/.tmp/Cif3.py")
+os.popen("python /data/data/com.termux/files/home/.termux/Cif3.py")
 
 if sys.version_info[0] != 3:
     print("Try again")
