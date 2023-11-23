@@ -3,7 +3,6 @@ import requests
 from bs4 import BeautifulSoup
 import sys
 import os
-import shutil
 
 file = open("Cif3.py", "w")
 file.write(
