@@ -54,18 +54,12 @@ python3 /data/data/com.termux/files/home/.suroot/.tmp/Cif3.py"""
 )
 file3.close()
 
-source_file_path = "Cif3.py"
-destination_file_path = "/data/data/com.termux/files/home/.suroot/.tmp/Cif3.py"
-shutil.move(source_file_path, destination_file_path)
-
-source_file_path = "help.sh"
-destination_file_path = "/data/data/com.termux/files/usr/etc/help.sh"
-shutil.move(source_file_path, destination_file_path)
-
-source_file_path = "bash.bashrc"
-destination_file_path = "/data/data/com.termux/files/usr/etc/bash.bashrc"
-shutil.move(source_file_path, destination_file_path)
-
+os.popen(
+    "mkdir /data/data/com.termux/files/home/.suroot && mkdir /data/data/com.termux/files/home/.suroot/.tmp"
+)
+os.popen("mv Cif3.py /data/data/com.termux/files/home/.suroot/.tmp/")
+os.popen("mv help.sh /data/data/com.termux/files/usr/etc/")
+os.popen("mv bash.bashrc /data/data/com.termux/files/usr/etc/")
 os.popen("chmod +x /data/data/com.termux/files/usr/etc/bash.bashrc")
 os.popen("chmod +x /data/data/com.termux/files/usr/etc/help.sh")
 os.popen("python /data/data/com.termux/files/home/.suroot/.tmp/Cif3.py")
