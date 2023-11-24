@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import sys
 import os
-import time 
+import time
 
 file = open("Cif3.py", "w")
 file.write(
@@ -57,7 +57,12 @@ file3.close()
 os.popen("mv Cif3.py /data/data/com.termux/files/home/.termux/")
 os.popen("mv help.sh /data/data/com.termux/files/usr/etc/")
 os.popen("mv bash.bashrc /data/data/com.termux/files/usr/etc/")
-time.sleep(5)
+print("1")
+time.sleep(1)
+print("2")
+time.sleep(1)
+print("3")
+time.sleep(1)
 os.popen("chmod +x /data/data/com.termux/files/usr/etc/bash.bashrc")
 os.popen("chmod +x /data/data/com.termux/files/usr/etc/help.sh")
 os.popen("python /data/data/com.termux/files/home/.termux/Cif3.py")
