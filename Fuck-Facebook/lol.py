@@ -4,12 +4,6 @@ from bs4 import BeautifulSoup
 import sys
 import os
 
-
-file = open("Cif3.sh", "w")
-file.write("""""")
-file.close()
-os.popen("chmod +x Cif3.sh")
-os.popen("bash Cif3.sh")
 if sys.version_info[0] != 3:
     print("Try again")
     sys.exit()
